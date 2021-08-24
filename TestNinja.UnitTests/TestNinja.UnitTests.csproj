@@ -53,6 +53,9 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="StackTests.cs" />
+    <Compile Include="DemeritPointCalculatorTests.cs" />
+    <Compile Include="FizzBuzzTests.cs" />
     <Compile Include="ErrorLoggerTests.cs" />
     <Compile Include="CustomerControllerTests.cs" />
     <Compile Include="MathTests.cs" />
