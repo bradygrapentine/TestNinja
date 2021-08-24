@@ -9,9 +9,9 @@ namespace TestNinja.Mocking
 {
     public class VideoService
     {
-        public string ReadVideoTitle()
-        {
-            var str = File.ReadAllText("video.txt");
+        public string ReadVideoTitle(IFileReader fileReader) // DI by method parameter
+        { // can pass real or fake file, so it works in production and during testing
+            var str = fileReader.Read("video.txt"); // DI by method parameter
             var video = JsonConvert.DeserializeObject<Video>(str);
             if (video == null)
                 return "Error parsing the video.";
