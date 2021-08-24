@@ -28,3 +28,11 @@ C:\Users\bgrap\source\repos\TestNinja\TestNinja.UnitTests\bin\Debug\Mono.Cecil.M
 C:\Users\bgrap\source\repos\TestNinja\TestNinja.UnitTests\bin\Debug\Mono.Cecil.Rocks.dll
 C:\Users\bgrap\source\repos\TestNinja\TestNinja.UnitTests\bin\Debug\nunit.framework.dll
 C:\Users\bgrap\source\repos\TestNinja\TestNinja.UnitTests\bin\Debug\nunit.framework.xml
+C:\Users\bgrap\source\repos\TestNinja\TestNinja.UnitTests\bin\Debug\Castle.Core.dll
+C:\Users\bgrap\source\repos\TestNinja\TestNinja.UnitTests\bin\Debug\Moq.dll
+C:\Users\bgrap\source\repos\TestNinja\TestNinja.UnitTests\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\bgrap\source\repos\TestNinja\TestNinja.UnitTests\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\bgrap\source\repos\TestNinja\TestNinja.UnitTests\bin\Debug\Castle.Core.xml
+C:\Users\bgrap\source\repos\TestNinja\TestNinja.UnitTests\bin\Debug\Moq.xml
+C:\Users\bgrap\source\repos\TestNinja\TestNinja.UnitTests\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\bgrap\source\repos\TestNinja\TestNinja.UnitTests\bin\Debug\System.Threading.Tasks.Extensions.xml
