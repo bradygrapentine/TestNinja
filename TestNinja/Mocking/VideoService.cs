@@ -9,9 +9,24 @@ namespace TestNinja.Mocking
 {
     public class VideoService
     {
-        public string ReadVideoTitle(IFileReader fileReader) // DI by method parameter
-        { // can pass real or fake file, so it works in production and during testing
-            var str = fileReader.Read("video.txt"); // DI by method parameter
+        //public IFileReader FileReader { get; set; }
+        private IFileReader _fileReader; // DI via constructor 
+
+    //    public VideoService() // For production code
+   //     {
+   //         _fileReader = new FileReader();
+  //      }
+
+        public VideoService(IFileReader fileReader = null) // DI via constructor injection, for test
+        { // optional parameter eliminates need for production constructor
+            _fileReader = fileReader == null ? new FileReader() : fileReader; // DI via property
+        }
+        //public string ReadVideoTitle(IFileReader fileReader) // DI by method parameter
+        //{ // can pass real or fake file, so it works in production and during testing
+        //  var str = fileReader.Read("video.txt"); // DI by method parameter
+        public string ReadVideoTitle()
+        {
+            var str = _fileReader.Read("video.txt"); 
             var video = JsonConvert.DeserializeObject<Video>(str);
             if (video == null)
                 return "Error parsing the video.";
