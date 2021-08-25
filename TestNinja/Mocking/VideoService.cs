@@ -44,10 +44,6 @@ namespace TestNinja.Mocking
                 return String.Join(",", videoIds);
         }
 
-       // public static implicit operator global::Moq.Mock<object>(VideoService v)
-       // {
-       //   throw new NotImplementedException();
-       // }
     }
 
     public class Video
