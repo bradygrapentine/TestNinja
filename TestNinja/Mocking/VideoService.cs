@@ -11,15 +11,16 @@ namespace TestNinja.Mocking
     {
         //public IFileReader FileReader { get; set; }
         private IFileReader _fileReader; // DI via constructor 
-
+        private IVideoRepository _repository;
     //    public VideoService() // For production code
    //     {
    //         _fileReader = new FileReader();
   //      }
 
-        public VideoService(IFileReader fileReader = null) // DI via constructor injection, for test
+        public VideoService(IFileReader fileReader = null, IVideoRepository repository = null) // DI via constructor injection, for test
         { // optional parameter eliminates need for production constructor
             _fileReader = fileReader == null ? new FileReader() : fileReader; // DI via property
+            _repository = repository ?? new VideoRepository();
         }
         //public string ReadVideoTitle(IFileReader fileReader) // DI by method parameter
         //{ // can pass real or fake file, so it works in production and during testing
@@ -36,20 +37,17 @@ namespace TestNinja.Mocking
         public string GetUnprocessedVideosAsCsv()
         {
             var videoIds = new List<int>();
-            
-            using (var context = new VideoContext())
-            {
-                var videos = 
-                    (from video in context.Videos
-                    where !video.IsProcessed
-                    select video).ToList();
-                
+            var videos = _repository.GetUnprocessedVideos();
                 foreach (var v in videos)
                     videoIds.Add(v.Id);
 
                 return String.Join(",", videoIds);
-            }
         }
+
+       // public static implicit operator global::Moq.Mock<object>(VideoService v)
+       // {
+       //   throw new NotImplementedException();
+       // }
     }
 
     public class Video
