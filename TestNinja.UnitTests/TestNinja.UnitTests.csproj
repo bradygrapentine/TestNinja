@@ -68,6 +68,7 @@
   <ItemGroup>
     <Compile Include="EmployeeControllerTests.cs" />
     <Compile Include="InstallerHelperTests.cs" />
+    <Compile Include="Mocking\BookingHelperTests.cs" />
     <Compile Include="OrderServiceTests.cs" />
     <Compile Include="Mocking\VideoServiceTests.cs" />
     <Compile Include="StackTests.cs" />
